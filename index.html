@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GSXR-404 // Ahmed Sabry — AI & Cybersecurity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ahmed Sabry (GSXR-404): AI researcher, cybersecurity ninja, and freight-tech builder. Cute retro-hacker portfolio.">
+  <meta property="og:title" content="GSXR-404 // Ahmed Sabry">
+  <meta property="og:description" content="AI researcher, cybersecurity ninja, and freight-tech builder.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <!-- FLOATING NAV -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="star">★</span>GSXR<span class="star">-404</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">MENU</button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-top"></div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="avatar" aria-label="GSXR-404 avatar"></div>
+      <h1>AHMED SABRY</h1>
+      <p class="tagline cursor-blink"><span class="accent">&gt;</span> <span id="typed">cybersecurity ninja</span></p>
+      <div class="hero-actions">
+        <a href="projects.html" class="btn btn-pink">▶ View Projects</a>
+        <a href="contact.html" class="btn btn-mint">✉ Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marquee">
+      <span>PYTHON</span><span class="dot">●</span><span>TENSORFLOW</span><span class="dot">●</span><span>RED TEAM</span><span class="dot">●</span><span>OWASP</span><span class="dot">●</span><span>RUST</span><span class="dot">●</span><span>FREIGHT LOGISTICS</span><span class="dot">●</span><span>WEB DEV</span><span class="dot">●</span><span>K8S</span><span class="dot">●</span><span>AI AGENTS</span><span class="dot">●</span>
+    </div>
+  </div>
+
+  <!-- ABOUT SNIPPET -->
+  <section class="section" id="about">
+    <div class="container reveal">
+      <h2>// whoami</h2>
+      <p class="center" style="max-width:760px;margin:0 auto 1.5rem;">
+        Player: <strong>AHMED SABRY</strong> · Class: AI Researcher / Cybersecurity Ninja ·
+        Quest: build smart logistics, hack things for good, and level up the web.
+        Currently grinding: zero-trust ML pipelines &amp; freight optimization.
+      </p>
+      <div class="center"><a href="about.html" class="btn btn-sm">Read Player Profile →</a></div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section section-tight" id="projects">
+    <div class="container reveal">
+      <h2>// featured cabinets</h2>
+      <div class="grid">
+        <article class="card">
+          <h3 class="glitch">GSXRRR Freight Intel</h3>
+          <p>Invisible tender-quotation engine: scrapes &amp; compares 8 shipping lines at once. Up to 50% cost cut.</p>
+          <div>
+            <span class="tag">Python</span><span class="tag pink">Logistics</span><span class="tag mint">Scraping</span>
+          </div>
+          <p style="margin-top:1rem;"><a href="projects.html" class="btn btn-sm btn-pink">PLAY ▶</a></p>
+        </article>
+
+        <article class="card">
+          <h3 class="glitch">Self-Hosted FF ERP</h3>
+          <p>Full ERP: CRM, HR, payroll, docs, dashboards + satellite AIS vessel tracking, carrier-independent.</p>
+          <div>
+            <span class="tag">ERP</span><span class="tag mint">AIS</span><span class="tag pink">Full-Stack</span>
+          </div>
+          <p style="margin-top:1rem;"><a href="projects.html" class="btn btn-sm btn-pink">PLAY ▶</a></p>
+        </article>
+
+        <article class="card">
+          <h3 class="glitch">Freight AI Agent</h3>
+          <p>AI ops assistant for forwarders: quotes, docs, workflows, knowledge retrieval, automation.</p>
+          <div>
+            <span class="tag mint">AI</span><span class="tag">LLM</span><span class="tag pink">Automation</span>
+          </div>
+          <p style="margin-top:1rem;"><a href="projects.html" class="btn btn-sm btn-pink">PLAY ▶</a></p>
+        </article>
+      </div>
+      <div class="center" style="margin-top:2rem;"><a href="projects.html" class="btn">All Projects →</a></div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="section section-tight" id="blog-preview">
+    <div class="container reveal">
+      <h2>// latest transmissions</h2>
+      <div class="grid">
+        <article class="card">
+          <h3 class="glitch">Zero-Trust ML Pipelines</h3>
+          <p class="muted" style="font-size:.85rem;margin-bottom:.6rem;">May 2025 • AI Security</p>
+          <p>How data-poisoning attacks are mitigated with runtime model attestation.</p>
+          <p><a href="blog.html" class="btn btn-sm btn-mint">READ →</a></p>
+        </article>
+        <article class="card">
+          <h3 class="glitch">Customs via LLMs</h3>
+          <p class="muted" style="font-size:.85rem;margin-bottom:.6rem;">Apr 2025 • Logistics AI</p>
+          <p>Fine-tuned LLM extracts HS codes from messy shipping docs — 70% less manual entry.</p>
+          <p><a href="blog.html" class="btn btn-sm btn-mint">READ →</a></p>
+        </article>
+      </div>
+      <div class="center" style="margin-top:2rem;"><a href="blog.html" class="btn">All Posts →</a></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section center" id="newsletter">
+    <div class="container reveal card" style="max-width:640px;">
+      <h2>// join the high-score table</h2>
+      <p class="muted">Occasional notes on research, open-source drops, and talks. No spam, ever.</p>
+      <form id="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label for="newsletter-email" class="sr-only" style="position:absolute;left:-9999px;">Email</label>
+          <input type="email" name="email" id="newsletter-email" placeholder="your@email.com" required>
+        </div>
+        <button type="submit" class="btn btn-block btn-pink">Subscribe ★</button>
+        <p class="form-note">We respect your privacy.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Ahmed Sabry // GSXR-404. All rights reserved.</p>
+      <div class="social">
+        <a href="https://github.com/sabriigsxr" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+        </a>
+        <a href="https://instagram.com/ahmedsabriigsxr1000" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/sabriigsxr" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9V9z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

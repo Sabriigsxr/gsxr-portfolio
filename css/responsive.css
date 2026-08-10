@@ -1,0 +1,47 @@
+/* Responsive — GSXR-404 vaporwave-pixel */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .section { padding: 4rem 0; }
+  .grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+}
+
+/* Phone */
+@media (max-width: 640px) {
+  .site-header .container { padding: .6rem .8rem; }
+  .nav-toggle { display: block; }
+  .nav {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: .3rem;
+    margin-top: .6rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height var(--dur-slow) var(--ease-out-expo), opacity var(--dur-normal), margin-top var(--dur-normal);
+  }
+  .nav.open {
+    max-height: 300px;
+    opacity: 1;
+  }
+  .nav a { padding: .6rem; }
+
+  .hero { padding: 3rem 0 2.5rem; }
+  .avatar { width: 104px; height: 104px; font-size: 1.3rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+
+  .section { padding: 3rem 0; }
+  .section-tight { padding: 2.2rem 0; }
+  .card { padding: 1.2rem; }
+
+  .grid { grid-template-columns: 1fr; }
+
+  .marquee span { font-size: .6rem; }
+}
+
+/* Extra small */
+@media (max-width: 380px) {
+  h1 { font-size: 1.2rem; }
+  .container { width: 94%; }
+}
