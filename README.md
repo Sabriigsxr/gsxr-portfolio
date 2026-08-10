@@ -80,15 +80,27 @@ portfolio_site/
 ## 🗺️ Roadmap
 
 - [ ] Services page with neon cards
+
+> *Every arcade needs new cabinets. GSXR-404 delivers weekly.*
 - [ ] Newsletter capture + automations
 - [ ] PageSpeed 90+ on mobile & desktop
 - [ ] Blog CMS (markdown → static)
 
-## 👤 Author
+## 👾 Meet the Author
 
-**Ahmed Sabry (GSXR-404)** — AI researcher · cybersecurity ninja · freight-tech builder
+```
+PLAYER 1 — AHMED SABRY (GSXR-404)
+CLASS  : AI Researcher / Cybersecurity Ninja
+QUIRK  : builds smart logistics, hacks things for good,
+         and levels up the web — one repo at a time
+XP     : ████████████████░░ always grinding
+CURRENT: zero-trust ML pipelines & freight optimization
+```
 
-- GitHub: [@Sabriigsxr](https://github.com/Sabriigsxr)
+This arcade is my home screen. Expect new cabinets (projects) installed weekly —
+some are AI, some are security, some are logistics. All are built for fun and function.
+
+> 🌐 [github.com/Sabriigsxr](https://github.com/Sabriigsxr) · 🕹️ Insert coin, follow the build
 
 ## 📄 License
 
