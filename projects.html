@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <title>Projects // Ahmed Sabry — GSXR-404</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Arcade cabinets of Ahmed Sabry's projects: freight intelligence, self-hosted ERP, carrier intelligence, logistics database, freight AI agent.">
+  <meta name="description" content="GSXR-404 project modules: AI agents, red-team & OSINT tooling, freight intelligence and web tools — all open source on GitHub.">
   <meta property="og:title" content="Projects // Ahmed Sabry">
-  <meta property="og:description" content="Freight intelligence, ERP, carrier intelligence, logistics database, AI agent.">
+  <meta property="og:description" content="AI agents, red-team & OSINT, freight intelligence, web tools — 16 open-source modules.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/og.png">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projects.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
       <nav class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html" class="active">Projects</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -32,78 +33,347 @@
   </header>
   <div class="page-top"></div>
 
-  <section class="section" id="projects">
-    <div class="container reveal">
-      <h1>// insert coin — select cabinet</h1>
-
-      <article class="card" style="margin-bottom:1.6rem;">
-        <h3 class="glitch">GSXRRR Freight Intelligence Platform</h3>
-        <p>Invisible tender-quotation engine using advanced web scraping to retrieve and compare quotations from multiple shipping lines — no public APIs required.</p>
-        <ul class="muted" style="margin:.4rem 0 1rem 1.1rem;line-height:1.9;">
-          <li>Compared quotations across 8 shipping lines simultaneously</li>
-          <li>Achieved cost reductions of up to 50% on actual shipments</li>
-          <li>Supports API, Webhooks, WhatsApp &amp; Telegram integrations</li>
-        </ul>
-        <div><span class="tag">Python</span><span class="tag pink">Web Scraping</span><span class="tag mint">Logistics</span><span class="tag yellow">Integrations</span></div>
-        <p style="margin-top:1rem;"><a href="#" class="btn btn-sm btn-pink">CASE STUDY ▶</a></p>
-      </article>
-
-      <article class="card" style="margin-bottom:1.6rem;">
-        <h3 class="glitch">Self-Hosted Freight Forwarding ERP</h3>
-        <p>Complete self-hosted ERP covering CRM, HR, Payroll, Accounting, Documentation, Reporting &amp; Dashboards. Integrated satellite-based AIS vessel monitoring to track position, speed, and voyage progress independently of carrier systems.</p>
-        <div><span class="tag">ERP</span><span class="tag mint">AIS</span><span class="tag pink">Full-Stack</span><span class="tag">Logistics</span></div>
-        <p style="margin-top:1rem;"><a href="#" class="btn btn-sm btn-pink">CASE STUDY ▶</a></p>
-      </article>
-
-      <article class="card" style="margin-bottom:1.6rem;">
-        <h3 class="glitch">SpeedHub Carrier Intelligence Platform</h3>
-        <p>Carrier intelligence with schedules for 100+ global shipping lines. Identifies carriers by origin/destination port and sailing schedule.</p>
-        <ul class="muted" style="margin:.4rem 0 1rem 1.1rem;line-height:1.9;">
-          <li>Faster carrier discovery &amp; better routing decisions</li>
-          <li>Improved pricing competitiveness</li>
-        </ul>
-        <div><span class="tag">Logistics</span><span class="tag">Data</span><span class="tag yellow">Routing</span></div>
-        <p style="margin-top:1rem;"><a href="#" class="btn btn-sm btn-pink">CASE STUDY ▶</a></p>
-      </article>
-
-      <article class="card" style="margin-bottom:1.6rem;">
-        <h3 class="glitch">Global Freight Intelligence Database</h3>
-        <p>Proprietary database with 10,000+ verified records: Freight Forwarders, Shipping Lines, Airlines, Overseas Agents, and Business Decision Makers — organized by country, city, transport mode, and trade lane.</p>
-        <div><span class="tag mint">Data</span><span class="tag">Intelligence</span><span class="tag pink">Logistics</span></div>
-        <p style="margin-top:1rem;"><a href="#" class="btn btn-sm btn-pink">CASE STUDY ▶</a></p>
-      </article>
-
-      <article class="card">
-        <h3 class="glitch">Custom Freight Forwarder AI Agent</h3>
-        <p>AI-powered operational assistant for freight-forwarding companies. Handles quotations, documentation, workflows, knowledge retrieval, and business-process automation integrated with internal systems.</p>
-        <div><span class="tag mint">AI</span><span class="tag">LLM</span><span class="tag pink">Automation</span><span class="tag yellow">Logistics</span></div>
-        <p style="margin-top:1rem;"><a href="#" class="btn btn-sm btn-pink">CASE STUDY ▶</a></p>
-      </article>
-
-      <h2 style="margin-top:3.5rem;">// business impact</h2>
-      <div class="card" style="max-width:820px;margin:0 auto;">
-        <ul style="list-style:none;line-height:2.1;">
-          <li><span style="color:var(--mint)">★</span> Reduced freight quotation prep from hours → under 6 seconds</li>
-          <li><span style="color:var(--mint)">★</span> Up to 50% cost reduction via alternative carriers</li>
-          <li><span style="color:var(--mint)">★</span> Managed 8–15 concurrent international shipments with accuracy</li>
-          <li><span style="color:var(--mint)">★</span> Built relationships with 20–50 overseas freight partners</li>
-          <li><span style="color:var(--mint)">★</span> 10,000+ verified logistics intelligence records maintained</li>
-        </ul>
+  <!-- ASCII FLOWTRAIL HERO -->
+  <section class="ascii-hero" id="ascii-trail" data-src="assets/img/avatar-photo.png">
+    <canvas id="trail-canvas"></canvas>
+    <div class="ascii-hero-inner">
+      <pre class="ascii-banner" aria-hidden="true">  _____   ______  _____  _____ _______ _______ _______ _______
+ |_____] |_____/ |     |   |   |______ |          |    |______
+ |       |    \_ |_____| __|   |______ |_____     |    ______|
+                                                              </pre>
+      <p class="ascii-sub">GSXR-404 // compiled modules — <span class="dim">16/54 repos online</span></p>
+      <div class="term-bar" aria-label="filter terminal">
+        <span class="prompt">gsxr@qzz.io:~/projects$</span>
+        <span class="typed" id="typed-cmd">./run --all</span><span class="cursor">█</span>
+      </div>
+      <div class="filter-pills" id="filter-pills">
+        <button class="pill active" data-filter="all">--all</button>
+        <button class="pill" data-filter="ai">--ai</button>
+        <button class="pill" data-filter="cyber">--cyber</button>
+        <button class="pill" data-filter="freight">--freight</button>
+        <button class="pill" data-filter="web">--web</button>
       </div>
     </div>
   </section>
 
-  <footer class="site-footer">
+  <section class="section" id="projects">
+    <div class="container">
+      <div id="projects-grid">
+      <article class="term-card reveal" data-cats="ai">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">GSXR-CTI</span>
+          <span class="term-ver">v2.4</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ ./gsxr-cti --scan-cve</span></p>
+          <p class="desc">Offline local-LLM cyber threat intelligence assistant — 285k+ CVEs, MITRE ATT&CK / CAPEC / CWE, 450k training samples. No API keys, fully private.</p>
+          <div class="flags"><span class="flag pink">--ai</span><span class="flag pink">--llm</span><span class="flag mint">--cti</span><span class="flag ">--offline</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">Python</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/GSXR-CTI" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="ai">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">hexstrike-ai</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ npx hexstrike --auto-pentest</span></p>
+          <p class="desc">Advanced MCP server that lets AI agents (Claude, GPT, Copilot…) autonomously run 150+ cybersecurity tools for pentesting, vuln discovery & bug bounty.</p>
+          <div class="flags"><span class="flag pink">--ai</span><span class="flag pink">--mcp</span><span class="flag ">--agents</span><span class="flag mint">--150+tools</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">n/a</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/hexstrike-ai" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="ai">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">local-deep-research</span>
+          <span class="term-ver">v0.9</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ python research.py --topic x --local</span></p>
+          <p class="desc">Local research agent — ~95% on SimpleQA. Supports all local & cloud LLMs (llama.cpp, Ollama, Google), 10+ search engines. Everything local & encrypted.</p>
+          <div class="flags"><span class="flag pink">--ai</span><span class="flag pink">--llm</span><span class="flag mint">--rag</span><span class="flag ">--encrypted</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">n/a</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/local-deep-research" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="ai">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">openclaw</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ openclaw --ask lobster</span></p>
+          <p class="desc">Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞</p>
+          <div class="flags"><span class="flag pink">--ai</span><span class="flag pink">--assistant</span><span class="flag mint">--cross-platform</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">TypeScript</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/openclaw" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="cyber">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">Claude-OSINT</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ ./recon --modules 90</span></p>
+          <p class="desc">Two paired Claude skills · 90+ recon modules · 48 secret-regex patterns · 80+ dorks · 27 attack-path templates. For authorized red-team & bug-bounty engagements.</p>
+          <div class="flags"><span class="flag ">--cyber</span><span class="flag ">--osint</span><span class="flag mint">--recon</span><span class="flag pink">--skills</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 1</span>
+            <span class="lang">n/a</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/Claude-OSINT" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="cyber">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">defender-lab</span>
+          <span class="term-ver">v1.2</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ python forensics.py --polyglot-check</span></p>
+          <p class="desc">Defensive image forensics — polyglot, steganography & EXIF attack detection pipeline (Python + Frida). Ethical research only.</p>
+          <div class="flags"><span class="flag ">--cyber</span><span class="flag mint">--forensics</span><span class="flag ">--frida</span><span class="flag pink">--ethical</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">Python</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/defender-lab" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="cyber">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">gsxr-red</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ ./gsxr-red --attack-pattern 1484</span></p>
+          <p class="desc">GSXR-Red Team — local agent with tool calling and 1484 Spikee attack patterns for authorized security testing.</p>
+          <div class="flags"><span class="flag ">--cyber</span><span class="flag pink">--redteam</span><span class="flag ">--tool-calling</span><span class="flag mint">--1484</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">CSS</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/gsxr-red" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="cyber">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">reconspider</span>
+          <span class="term-ver">v2.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ python reconspider.py -s target.com</span></p>
+          <p class="desc">Most advanced OSINT framework for scanning IP addresses, emails, websites & organizations — one command, deep intel.</p>
+          <div class="flags"><span class="flag ">--cyber</span><span class="flag ">--osint</span><span class="flag mint">--framework</span><span class="flag ">--deep-intel</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">n/a</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/reconspider" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="cyber">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">DetectDee</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ python detectdee.py --username x</span></p>
+          <p class="desc">Hunt down social media accounts by username, email or phone across dozens of social networks.</p>
+          <div class="flags"><span class="flag ">--cyber</span><span class="flag ">--osint</span><span class="flag mint">--social</span><span class="flag ">--username</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">n/a</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/DetectDee" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="freight">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">freight-rate-app</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ npm run rates -- --from CMB --to HAM</span></p>
+          <p class="desc">Freight rate comparison app — real-world rate intelligence for forwarders and shippers.</p>
+          <div class="flags"><span class="flag mint">--freight</span><span class="flag mint">--freight</span><span class="flag ">--typescript</span><span class="flag ">--rates</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 1</span>
+            <span class="lang">TypeScript</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/freight-rate-app" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="freight">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">gsxr404-scheduler</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ node scheduler --stealth --ui retro</span></p>
+          <p class="desc">Stealth-based shipping schedule aggregator · 80s retro terminal UI · Node.js + Playwright + jsPDF.</p>
+          <div class="flags"><span class="flag mint">--freight</span><span class="flag mint">--freight</span><span class="flag ">--node</span><span class="flag pink">--terminal</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">JavaScript</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/gsxr404-scheduler" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="freight">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">Community Freight</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ docker compose up --platform all</span></p>
+          <p class="desc">Community platform where users sign up to offer or request freight services — Air, Ocean, Rail & Haulage.</p>
+          <div class="flags"><span class="flag mint">--freight</span><span class="flag mint">--freight</span><span class="flag ">--marketplace</span><span class="flag ">--air/ocean/rail</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">n/a</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/Community-Freight-and-Logistics-Platform" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="web">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">FlyBot-Egypt</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ npm run fly -- --shop</span></p>
+          <p class="desc">Egypt's pioneering drone & RC brand — full website platform: product showcases, rentals, custom builds, contests & community.</p>
+          <div class="flags"><span class="flag yellow">--web</span><span class="flag yellow">--web</span><span class="flag ">--drones</span><span class="flag mint">--ecommerce</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">HTML</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/FlyBot-Egypt" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="web">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">Mass-Mailer</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ python mailer.py --merge --safe-rate</span></p>
+          <p class="desc">Bulk email sender in Python — SMTP + mail-merge + rate-safe delays + Eel GUI. Educational, CAN-SPAM/GDPR aware, zero credentials.</p>
+          <div class="flags"><span class="flag yellow">--web</span><span class="flag yellow">--web</span><span class="flag ">--python</span><span class="flag mint">--educational</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">JavaScript</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/Mass-Mailer" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="web">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">Auto-Gmail-Creator</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ python create.py --bulk --headless</span></p>
+          <p class="desc">Open source bulk auto Gmail creator bot with Selenium & Seleniumwire (Python). Automation & scraping playground.</p>
+          <div class="flags"><span class="flag yellow">--web</span><span class="flag yellow">--web</span><span class="flag ">--selenium</span><span class="flag mint">--automation</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">n/a</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/Auto-Gmail-Creator" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      <article class="term-card reveal" data-cats="web">
+        <div class="term-head">
+          <span class="tdots"><i></i><i></i><i></i></span>
+          <span class="term-title">awesome-cli</span>
+          <span class="term-ver">v1.0</span>
+        </div>
+        <div class="term-body">
+          <p class="cmdline"><span class="prompt">gsxr@qzz.io:~$</span> <span class="run">$ awesome-cli browse --cat ai</span></p>
+          <p class="desc">A simple command line tool that gives you a fancy CLI to dive into Awesome lists from the terminal.</p>
+          <div class="flags"><span class="flag yellow">--web</span><span class="flag yellow">--web</span><span class="flag ">--cli</span><span class="flag pink">--terminal</span></div>
+          <div class="term-meta">
+            <span class="stars">★ 0</span>
+            <span class="lang">n/a</span>
+            <a class="clone" href="https://github.com/Sabriigsxr/awesome-cli" target="_blank" rel="noopener">git clone ↗</a>
+          </div>
+        </div>
+      </article>
+      </div>
+      <div class="center" style="margin-top:1.4rem;">
+        <p id="no-results" class="muted" hidden>no modules match that flag… try <code>./run --all</code></p>
+        <a class="btn btn-mint" href="https://github.com/sabriigsxr" target="_blank" rel="noopener">full repo index → github</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight" id="impact">
+    <div class="container reveal">
+      <h2 class="center">// business impact</h2>
+      <p class="center muted" style="margin:0 0 1.6rem;font-size:.9rem;">freight-tech · zero-trust pipelines · 10k+ intel records</p>
+      <div class="impact-term reveal">
+        <p class="log-cmd"><span class="prompt">gsxr@qzz.io:~$</span> cat /var/log/impact.log</p>
+        <p class="log-line"><span class="ok">✔</span> reduced freight quotation prep from hours → under 6 seconds</p>
+        <p class="log-line"><span class="ok">✔</span> up to 50% cost reduction via alternative carriers</p>
+        <p class="log-line"><span class="ok">✔</span> managed 8–15 concurrent international shipments with accuracy</p>
+        <p class="log-line"><span class="ok">✔</span> 20–50 overseas freight partner relationships built</p>
+        <p class="log-line"><span class="ok">✔</span> 10,000+ verified logistics-intelligence records maintained</p>
+        <p class="log-line dim" style="color:var(--text-dim);">…54 public repos · 16 modules compiled · exit 0</p>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
     <div class="container">
       <p>&copy; <span id="year"></span> Ahmed Sabry // GSXR-404. All rights reserved.</p>
       <div class="social">
-        <a href="https://github.com/sabriigsxr" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a>
-        <a href="https://instagram.com/ahmedsabriigsxr1000" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-        <a href="https://linkedin.com/in/sabriigsxr" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9V9z"/></svg></a>
+        <a href="https://github.com/sabriigsxr" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+        </a>
+        <a href="https://instagram.com/ahmedsabriigsxr1000" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/sabriigsxr" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9V9z"/></svg>
+        </a>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/projects.js"></script>
 </body>
 </html>

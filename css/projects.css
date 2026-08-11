@@ -1,0 +1,226 @@
+/* ============================================================
+   PROJECTS — ASCII FLOWTRAIL
+   terminal-window project modules · ascii dither hero · filter bar
+   ============================================================ */
+
+/* ---- ASCII hero ---- */
+.ascii-hero {
+  position: relative;
+  min-height: 82vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 5rem 1.5rem 3rem;
+}
+#trail-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+}
+.ascii-hero-inner {
+  position: relative; z-index: 2;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.ascii-hero::after { /* soft vignette so text stays readable */
+  content: "";
+  position: absolute; inset: 0;
+  z-index: 1;
+  background: radial-gradient(ellipse at 50% 42%, transparent 30%, rgba(10,3,22,.78) 92%);
+  pointer-events: none;
+}
+.ascii-banner {
+  font-family: var(--font-mono);
+  font-size: clamp(.5rem, 1.75vw, 1.1rem);
+  line-height: 1.16;
+  letter-spacing: .1em;
+  color: var(--pink);
+  text-shadow: 0 0 14px rgba(255,113,206,.55), 0 0 34px rgba(255,113,206,.25);
+  margin: 0 0 .5rem;
+  white-space: pre;
+  overflow-x: auto;
+}
+.ascii-sub {
+  font-family: var(--font-mono);
+  color: var(--mint);
+  font-size: clamp(.8rem, 1.5vw, 1.05rem);
+  margin: 0 0 1.7rem;
+}
+.ascii-sub .dim { color: var(--text-dim); }
+
+/* ---- terminal filter bar ---- */
+.term-bar {
+  font-family: var(--font-mono);
+  background: rgba(10,3,22,.74);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-sm);
+  padding: .7rem 1.1rem;
+  margin: 0 auto 1.2rem;
+  max-width: 680px;
+  text-align: left;
+  box-shadow: 0 0 16px rgba(1,205,254,.16);
+  display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
+  backdrop-filter: blur(2px);
+}
+.term-bar .prompt { color: var(--mint); white-space: nowrap; }
+.term-bar .typed { color: var(--text); }
+.term-bar .cursor {
+  color: var(--yellow);
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.filter-pills { display: flex; gap: .55rem; justify-content: center; flex-wrap: wrap; }
+.pill {
+  font-family: var(--font-mono);
+  background: rgba(10,3,22,.72);
+  color: var(--cyan);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .42rem 1rem;
+  cursor: pointer;
+  font-size: .82rem;
+  transition: all var(--dur-normal) var(--ease-out-expo);
+}
+.pill:hover { border-color: var(--cyan); box-shadow: var(--glow-cyan); transform: translateY(-2px); }
+.pill.active {
+  background: var(--pink);
+  color: #1a0720;
+  border-color: var(--pink);
+  box-shadow: var(--glow-pink);
+}
+
+/* ---- terminal cards ---- */
+#projects-grid {
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+@media (min-width: 760px) { #projects-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1120px) { #projects-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.term-card {
+  background: rgba(20,10,38,.85);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  transition: transform var(--dur-normal) var(--ease-out-expo),
+              border-color var(--dur-normal), box-shadow var(--dur-normal);
+}
+.term-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--pink);
+  box-shadow: var(--glow-pink), 0 12px 30px rgba(0,0,0,.38);
+}
+.term-card.hidden { display: none; }
+
+.term-head {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: linear-gradient(90deg, var(--bg-2), var(--bg-card-hi));
+  border-bottom: 1px solid var(--border);
+  padding: .55rem .85rem;
+}
+.tdots { display: flex; gap: .35rem; flex: 0 0 auto; }
+.tdots i { width: 9px; height: 9px; border-radius: 50%; display: block; }
+.tdots i:nth-child(1) { background: var(--pink); }
+.tdots i:nth-child(2) { background: var(--yellow); }
+.tdots i:nth-child(3) { background: var(--mint); }
+.term-title {
+  font-size: .8rem;
+  color: var(--text-muted);
+  letter-spacing: .06em;
+  flex: 1;
+  text-align: center;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  margin-right: 2.7rem;
+}
+.term-ver {
+  font-size: .66rem;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: .05rem .42rem;
+  border-radius: 4px;
+  flex: 0 0 auto;
+}
+.term-body {
+  padding: 1rem 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  flex: 1;
+}
+.cmdline { font-size: .78rem; color: var(--text-dim); margin: 0; word-break: break-all; }
+.cmdline .prompt { color: var(--mint); }
+.cmdline .run { color: var(--text); }
+.desc { font-size: .87rem; line-height: 1.7; color: var(--text); flex: 1; margin: 0; }
+.flags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.flag {
+  font-size: .68rem;
+  font-family: var(--font-mono);
+  color: var(--cyan);
+  border: 1px dashed rgba(1,205,254,.45);
+  padding: .16rem .52rem;
+  border-radius: 4px;
+  background: rgba(1,205,254,.06);
+}
+.flag.pink  { color: var(--pink);  border-color: rgba(255,113,206,.45); background: rgba(255,113,206,.06); }
+.flag.mint  { color: var(--mint);  border-color: rgba(5,255,161,.45);   background: rgba(5,255,161,.06); }
+.flag.yellow{ color: var(--yellow);border-color: rgba(255,251,150,.4);  background: rgba(255,251,150,.06); }
+
+.term-meta {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  border-top: 1px dashed var(--border);
+  padding-top: .75rem;
+  font-size: .74rem;
+  color: var(--text-dim);
+}
+.stars { color: var(--yellow); }
+.lang { color: var(--purple); border: 1px solid var(--border); padding: .06rem .5rem; border-radius: 4px; }
+.clone {
+  margin-left: auto;
+  font-size: .74rem;
+  color: var(--mint);
+  text-decoration: none;
+  border: 1px solid rgba(5,255,161,.5);
+  padding: .26rem .7rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: all var(--dur-normal) var(--ease-out-expo);
+}
+.clone:hover { background: var(--mint); color: #06140d; box-shadow: var(--glow-mint); }
+
+/* ---- impact terminal log ---- */
+.impact-term {
+  max-width: 720px;
+  margin: 0 auto;
+  background: rgba(10,3,22,.7);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.3rem;
+  font-family: var(--font-mono);
+  text-align: left;
+  box-shadow: 0 0 18px rgba(185,103,255,.14);
+}
+.impact-term .log-line { font-size: .86rem; line-height: 2.05; color: var(--text); margin: 0; }
+.impact-term .log-line .ok { color: var(--mint); }
+.impact-term .log-line .dim { color: var(--text-dim); }
+.impact-term .log-cmd { font-size: .82rem; color: var(--text-dim); margin: 0 0 .4rem; }
+.impact-term .log-cmd .prompt { color: var(--yellow); }
+.impact-term .bar {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan), var(--mint));
+  margin-top: .9rem;
+  box-shadow: 0 0 12px rgba(255,113,206,.5);
+  animation: flowbar 3.2s ease-in-out infinite alternate;
+}
+@keyframes flowbar { from { width: 22%; } to { width: 96%; } }
