@@ -230,12 +230,17 @@ p { margin-bottom: 1rem; color: var(--text); }
   border-radius: 50%;
   border: 3px solid var(--pink);
   box-shadow: var(--glow-pink);
-  background: url('../assets/img/avatar.svg') center/cover no-repeat, linear-gradient(135deg, var(--purple), var(--cyan));
+  background: linear-gradient(135deg, var(--purple), var(--cyan));
   display: grid; place-items: center;
   font-family: var(--font-pixel);
   font-size: 1.6rem; color: #1a0720;
   overflow: hidden;
   transition: box-shadow var(--dur-normal), transform var(--dur-normal) var(--ease-out-expo);
+}
+.avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .avatar:hover {
   box-shadow: 0 0 12px rgba(255,113,206,.7), 0 0 24px rgba(255,113,206,.4);
